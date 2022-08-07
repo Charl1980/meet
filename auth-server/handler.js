@@ -9,10 +9,14 @@ const SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
 // Credentials are those values required to get access to your calendar
 // If you see “process.env” this meansthe value is in the “config.json” file
 const credentials = {
-  client_id: process.env.CLIENT_ID,
-  project_id: process.env.PROJECT_ID,
-  client_secret: process.env.CLIENT_SECRET,
-  calendar_id: process.env.CALENDAR_ID,
+  client_id: "981017565585-oomvpfnnhq6itd936v36cnudublvepeo.apps.googleusercontent.com",
+  project_id: "meet-app-358509",
+  client_secret: "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",
+  calendar_id: "fullstackwebdev@careerfoundry.com",
+  //client_id: process.env.CLIENT_ID,
+  //project_id: process.env.PROJECT_ID,
+  //client_secret: process.env.CLIENT_SECRET,
+  //calendar_id: process.env.CALENDAR_ID,
   auth_uri: "https://accounts.google.com/o/oauth2/auth",
   token_uri: "https://oauth2.googleapis.com/token",
   auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
