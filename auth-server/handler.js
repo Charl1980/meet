@@ -1,5 +1,4 @@
 const { google } = require("googleapis");
-const { resultingClientExists } = require("workbox-core/_private");
 const OAuth2 = google.auth.OAuth2;
 const calendar = google.calendar("v3");
 
