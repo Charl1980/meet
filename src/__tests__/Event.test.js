@@ -4,45 +4,47 @@ import Event from '../Event';
 import { mockData } from '../mock-data';
 
 describe('<Event /> component', () => {
-  let event, EventWrapper;
+  let EventWrapper;
   beforeAll(() => {
-    event = mockData[0];
-    EventWrapper = shallow(<Event event={event} />);
+    EventWrapper = shallow(<Event event={mockData[0]} />);
   });
 
-  test('render event item title', () => {
-    expect(EventWrapper.find('.event-title')).toHaveLength(1);
+  test('that component is rendered', () => {
+    expect(EventWrapper).toHaveLength(1);
   });
 
-  test('render collapsed event item', () => {
-    expect(EventWrapper.find('.event-info')).toHaveLength(1);
+  test('test that event wrapping div is rendered', () => {
+    expect(EventWrapper.find('.event')).toHaveLength(1);
   });
 
-  test('render show event details button', () => {
-    expect(EventWrapper.find('.show-event-details')).toHaveLength(1);
+  test('test that event wrapping div just shows event__Overview', () => {
+    expect(EventWrapper.find('.event').children()).toHaveLength(1);
   });
 
-  test('render event item details', () => {
-    expect(EventWrapper.find('.event-details')).toHaveLength(1);
+  test('test that event__Overview is rendered', () => {
+    expect(EventWrapper.find('.event__Overview')).toHaveLength(1);
   });
 
-  test('render hide event details button', () => {
-    expect(EventWrapper.find('.hide-event-details')).toHaveLength(1);
+  test('test that event__Overview children are rendered', () => {
+    expect(EventWrapper.find('.event__Overview').children()).toHaveLength(3);
   });
 
-  test('render click to show event details', () => {
+  test('test that event__Details children are rendered', () => {
     EventWrapper.setState({
-      show: true
+      showDetails: true
     });
-    EventWrapper.find('.show-event-details').simulate('click');
-    expect(EventWrapper.state('show')).toBe(true);
+    expect(EventWrapper.find('.event__Details--description')).toHaveLength(1);
   });
 
-  test('render click to hide event details', () => {
+  test('test that show/hide details button is rendered', () => {
+    expect(EventWrapper.find('.event__Overview button')).toHaveLength(1);
+  });
+
+  test('click on button should show details', () => {
     EventWrapper.setState({
-      hide: true
-    });
-    EventWrapper.find('.hide-event-details').simulate('click');
-    expect(EventWrapper.state('hide')).toBe(true);
+      showDetails: false
+    })
+    EventWrapper.find('.event__Overview button').simulate('click');
+    expect(EventWrapper.state('showDetails')).toBe(true);
   });
 })
