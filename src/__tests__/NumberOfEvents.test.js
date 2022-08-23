@@ -8,15 +8,23 @@ describe('<NumberOfEvents /> component', () => {
     NumberOfEventsWrapper = shallow(<NumberOfEvents updateEvents={() => { }} />);
   });
 
-  test('render number input', () => {
-    expect(NumberOfEventsWrapper.find('.number-input')).toHaveLength(1);
+  test('render textbox element', () => {
+    expect(NumberOfEventsWrapper.find('.numberOfEvents')).toHaveLength(1);
   });
 
-  test('change state when number input changes', () => {
-    NumberOfEventsWrapper.setState({ eventsAmount: '20' });
-    const eventObject = { target: { value: '5' } };
-    NumberOfEventsWrapper.find('.number-input').simulate('change', eventObject);
-    expect(NumberOfEventsWrapper.state('eventsAmount')).toBe('5');
+  test('render text input correctly', () => {
+    const numberOfEvents = NumberOfEventsWrapper.state('numberOfEvents');
+    expect(NumberOfEventsWrapper.find('#numberOfEvents__input').prop('value')).toBe(numberOfEvents);
   });
 
-})
+  test('change state when input changes', () => {
+    const eventObject = { target: { value: 32 } };
+    NumberOfEventsWrapper.find('#numberOfEvents__input').simulate('change', eventObject);
+    expect(NumberOfEventsWrapper.state('numberOfEvents')).toBe(32);
+  });
+
+  test('show number of events input label', () => {
+    expect(NumberOfEventsWrapper.find('.numberOfEvents label')).toHaveLength(1);
+  });
+
+});
