@@ -2,31 +2,47 @@ import React, { Component } from 'react';
 
 class Event extends Component {
   state = {
-    show: true,
-    hide: true
-  }
-
-  showDetailsClicked = () => {
-    this.setState({
-      show: this.state.show
-    });
-  }
-
-  hideDetailsClicked = () => {
-    this.setState({
-      hide: this.state.hide
-    });
+    showDetails: false
   }
 
   render() {
-    const { event } = this.props;
+    const {
+      summary,
+      location,
+      start,
+      description
+    } = this.props.event;
+    const { showDetails } = this.state;
     return (
       <div className='event'>
-        <h1 className='event-title'></h1>
-        <p className='event-info'></p>
-        <button className='show-event-details' onClick={() => this.showDetailsClicked()}>Show details</button>
-        <p className='event-details'></p>
-        <button className='hide-event-details' onClick={() => this.hideDetailsClicked()}>Hide details</button>
+        <div className='event__Overview'>
+          <h2 className='event__Overview--name'>{summary}</h2>
+          {location && (
+            <p className='event__Overview--venue'>
+              @{summary} | {location}
+            </p>
+          )}
+
+          {showDetails && (
+            <button className='details-btn' onClick={() => this.setState({ showDetails: !showDetails })} >
+              Hide details
+            </button>
+          )}
+
+          {!showDetails && (
+            <button className='details-btn' onClick={() => this.setState({ showDetails: !showDetails })} >
+              Show details
+            </button>
+          )}
+        </div>
+
+        {showDetails && (
+          <div className='event__Details'>
+            <h3>About event:</h3>
+            <p className='event__Details--description' />
+          </div>
+        )}
+
       </div>
     )
   }
