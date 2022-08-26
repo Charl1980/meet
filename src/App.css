@@ -83,7 +83,6 @@ input[type="number"] {
   display: grid;
   grid-template-columns: 2fr 2fr;
   gap: 20px;
-  background-color: pink;
 }
 
 .event {
@@ -233,6 +232,6 @@ input[type="number"] {
 
 @media only screen and (max-width: 768px) {
   .EventList {
-    display: none;
+    display: grid;
   }
 }
