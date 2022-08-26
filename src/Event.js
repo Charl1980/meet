@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 
 class Event extends Component {
   state = {
@@ -12,12 +13,13 @@ class Event extends Component {
       start,
       description
     } = this.props.event;
+    const eventStart = moment(start.dateTime, 'YYYY-MM-DD HH:mm').toDate();
     const { showDetails } = this.state;
     return (
       <div className='event'>
         <div className='event__Overview'>
           <h2 className='event__Overview--name'>{summary}</h2>
-          <p className='event__Overview--start'>{start.dateTime.slice(0, 10)}</p>
+          <p className='event__Overview--start'>{`${eventStart}`}</p>
           {location && (
             <p className='event__Overview--venue'>
               @{summary} | {location}
