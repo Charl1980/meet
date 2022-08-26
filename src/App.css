@@ -79,8 +79,11 @@ input[type="number"] {
   background-color: #bcdcdb;
 }
 
-.event {
+.EventList {
   display: grid;
+}
+
+.event {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
