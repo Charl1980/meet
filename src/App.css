@@ -39,6 +39,11 @@ input[type="number"] {
   height: 38px;
 }
 
+input[type="text"],
+input[type="number"]:focus {
+  border: 1px solid #bcdcdb;
+}
+
 .city {
   width: 250px;
 }
@@ -215,7 +220,9 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
-
+#numberOfEvents__input {
+  width: 250px;
+}
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
