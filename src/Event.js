@@ -17,6 +17,7 @@ class Event extends Component {
       <div className='event'>
         <div className='event__Overview'>
           <h2 className='event__Overview--name'>{summary}</h2>
+          <p className='event__Overview--start'>{start.dateTime.slice(0, 10)}</p>
           {location && (
             <p className='event__Overview--venue'>
               @{summary} | {location}
