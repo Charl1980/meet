@@ -14,6 +14,19 @@ class App extends Component {
     numberOfEvents: 32
   }
 
+  componentDidMount() {
+    this.mounted = true;
+    getEvents().then((events) => {
+      if (this.mounted) {
+        this.setState({ events, locations: extractLocations(events) });
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this.mounted = false;
+  }
+
   getData = () => {
     const { locations, events } = this.state;
     const data = locations.map((location) => {
@@ -53,19 +66,6 @@ class App extends Component {
         });
       });
     }
-  }
-
-  componentDidMount() {
-    this.mounted = true;
-    getEvents().then((events) => {
-      if (this.mounted) {
-        this.setState({ events, locations: extractLocations(events) });
-      }
-    });
-  }
-
-  componentWillUnmount() {
-    this.mounted = false;
   }
 
   render() {
