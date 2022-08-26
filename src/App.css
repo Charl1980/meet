@@ -80,13 +80,14 @@ input[type="number"] {
 }
 
 .event {
+  display: grid;
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
   border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
-  background-color: paleturquoise;
+  background-color: #bcdcdb;
 }
 
 .details-btn {
