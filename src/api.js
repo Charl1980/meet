@@ -31,7 +31,7 @@ export const extractLocations = (events) => {
   return locations;
 };
 
-export const getEvents = async (max_results = 32) => {
+export const getEvents = async () => {
   NProgress.start();
   if (window.location.href.startsWith('http://localhost')) {
     NProgress.done();
