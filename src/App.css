@@ -94,10 +94,14 @@ input[type="number"]:focus {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 1px solid #bcdcdb;
   border-radius: 4px;
   position: relative;
-  background-color: #bcdcdb;
+  background-color: #ccc;
+}
+
+.event__Overview {
+  color: darkslategrey;
 }
 
 .details-btn {
