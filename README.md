@@ -39,9 +39,9 @@ So that I can determine the amount of events displayed on screen
   
 #### Scenario 2: User can change the number of events they want to see
 
-	Given the user has opened the app
-	When the number of events is defined
-	Then the defined number of events will be displayed
+	Given the list of elements has been loaded and the user did not specify a number of events he wants to see
+  When the user specified a number
+  Then the maximum of events listed should be the specified number
   
 ### Feature 4: Use the app when offline
 As a user,
