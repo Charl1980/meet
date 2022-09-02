@@ -42,7 +42,7 @@ class Event extends Component {
         {showDetails && (
           <div className='event__Details'>
             <h3>About event:</h3>
-            <p className='event__Details--description' />
+            <p className='event__Details--description'>{description}</p>
           </div>
         )}
 
