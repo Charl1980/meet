@@ -37,8 +37,8 @@ defineFeature(feature, test => {
 
     then('the maximum of events listed should be the specified number', () => {
       const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);
-      NumberOfEventsWrapper.setState({ numberOfEvents: 13 });
-      expect(NumberOfEventsWrapper.state('numberOfevents')).toBe(13);
+      NumberOfEventsWrapper.setState({ handleInputChanged: 13 });
+      expect(NumberOfEventsWrapper.state('handleInputChanged')).toBe(13);
     });
   });
 
