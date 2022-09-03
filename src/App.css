@@ -100,7 +100,8 @@ input[type="number"]:focus {
   background-color: mintcream;
 }
 
-.event__Overview {
+.event__Overview,
+.event__Details {
   color: darkslategrey;
 }
 
