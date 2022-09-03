@@ -62,13 +62,28 @@ class App extends Component {
     });
   }
 
+  handleInputChanged = (event) => {
+    const value = event.target.value;
+
+    if (value > 32) {
+      this.setState({
+        infoText: "Select number from 1 to 32",
+      });
+    } else {
+      this.setState({
+        infoText: "",
+        numberOfEvents: value
+      });
+    }
+  };
+
   render() {
     const { events, locations, numberOfEvents } = this.state;
     return (
       <div className="App">
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
-        <NumberOfEvents updateEvents={this.updateEvents} numberOfEvents={numberOfEvents} />
-        <EventList events={events} />
+        <NumberOfEvents handleInputChanged={this.handleInputChanged} numberOfEvents={numberOfEvents} />
+        <EventList events={events.slice(0, numberOfEvents)} />
       </div>
     );
   }
