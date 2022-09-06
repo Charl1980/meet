@@ -162,8 +162,11 @@ input[type="number"]:focus {
 }
 
 .Alert {
-  position: fixed;
-  top: 20px;
+  /* position: fixed;
+  top: 20px; */
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .data-vis-wrapper {
