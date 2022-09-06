@@ -11,7 +11,8 @@ class App extends Component {
     events: [],
     locations: [],
     currentLocation: 'all',
-    numberOfEvents: 32
+    numberOfEvents: 32,
+    infoText: '',
   }
 
   componentDidMount() {
@@ -78,11 +79,11 @@ class App extends Component {
   };
 
   render() {
-    const { events, locations, numberOfEvents } = this.state;
+    const { events, locations, numberOfEvents, infoText } = this.state;
     return (
       <div className="App">
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
-        <NumberOfEvents handleInputChanged={this.handleInputChanged} numberOfEvents={numberOfEvents} />
+        <NumberOfEvents handleInputChanged={this.handleInputChanged} numberOfEvents={numberOfEvents} infoText={infoText} />
         <EventList events={events.slice(0, numberOfEvents)} />
       </div>
     );
