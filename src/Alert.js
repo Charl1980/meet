@@ -33,6 +33,13 @@ class ErrorAlert extends Alert {
     super(props);
     this.color = 'red';
   }
+
+  getStyle = () => {
+    return {
+      color: this.color,
+      fontStyle: 'italic',
+    };
+  }
 }
 
 export { InfoAlert, ErrorAlert };
