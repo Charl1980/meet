@@ -4,7 +4,7 @@ import { ErrorAlert } from './Alert';
 class NumberOfEvents extends Component {
 
   render() {
-    const { numberOfEvents, handleInputChanged } = this.props;
+    const { numberOfEvents, handleInputChanged, infoText } = this.props;
     return (
       <div className='numberOfEvents'>
         <label>Number of Events:</label>
@@ -14,7 +14,7 @@ class NumberOfEvents extends Component {
           value={numberOfEvents}
           onChange={handleInputChanged}
         />
-        <ErrorAlert text={this.state.infoText} />
+        <ErrorAlert text={infoText} />
       </div>
     );
   }
