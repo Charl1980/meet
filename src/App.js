@@ -16,7 +16,6 @@ class App extends Component {
     currentLocation: 'all',
     numberOfEvents: 32,
     infoText: '',
-    warningText: '',
   }
 
   async componentDidMount() {
@@ -99,14 +98,14 @@ class App extends Component {
   };
 
   render() {
-    const { events, locations, numberOfEvents, infoText, warningText } = this.state;
+    const { events, locations, numberOfEvents, infoText } = this.state;
 
     if (this.state.showWelcomeScreen === undefined)
       return <div className="App" />
 
     return (
       <div className="App">
-        <WarningAlert text={warningText} />
+        <WarningAlert text={this.state.warningText} />
         <h2>Meet App</h2>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
         <NumberOfEvents handleInputChanged={this.handleInputChanged} numberOfEvents={numberOfEvents} infoText={infoText} />
