@@ -106,7 +106,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <WarningAlert text={warningText}></WarningAlert>
+        <WarningAlert text={warningText} />
         <h2>Meet App</h2>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
         <NumberOfEvents handleInputChanged={this.handleInputChanged} numberOfEvents={numberOfEvents} infoText={infoText} />
