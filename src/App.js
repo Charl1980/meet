@@ -14,9 +14,10 @@ class App extends Component {
     currentLocation: 'all',
     numberOfEvents: 32,
     infoText: '',
+    warningText: '',
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.mounted = true;
     getEvents().then((events) => {
       if (this.mounted) {
@@ -26,7 +27,6 @@ class App extends Component {
         });
       }
     });
-
     if (!navigator.onLine) {
       this.setState({
         warningText: 'You are offline! The data has been loaded from the cache and may not be up to date.'
