@@ -16,6 +16,7 @@ class App extends Component {
     currentLocation: 'all',
     numberOfEvents: 32,
     infoText: '',
+    warningText: 'You are offline! The data has been loaded from the cache and may not be up to date.'
   }
 
   async componentDidMount() {
@@ -38,15 +39,15 @@ class App extends Component {
         }
       });
     }
-    if (!navigator.onLine) {
-      this.setState({
-        warningText: 'You are offline! The data has been loaded from the cache and may not be up to date.'
-      });
-    } else {
-      this.setState({
-        warningText: ''
-      });
-    }
+    //if (!navigator.onLine) {
+    //  this.setState({
+    //    warningText: 'You are offline! The data has been loaded from the cache and may not be up to date.'
+    //  });
+    //} else {
+    //  this.setState({
+    //    warningText: ''
+    //  });
+    //}
   }
 
   componentWillUnmount() {
