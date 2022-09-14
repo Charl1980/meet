@@ -5,14 +5,16 @@ import { WarningAlert } from './Alert';
 const EventList = ({ events, warningText }) => {
   if (!events) return null;
   return (
-    <ul className="EventList">
+    <div>
       {!navigator.onLine ? (<WarningAlert text={warningText} />) : ('')}
-      {events.map((event) => (
-        <li key={event.id}>
-          <Event event={event} />
-        </li>
-      ))}
-    </ul>
+      <ul className="EventList">
+        {events.map((event) => (
+          <li key={event.id}>
+            <Event event={event} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
