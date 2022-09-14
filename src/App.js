@@ -5,7 +5,6 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents, checkToken, getAccessToken } from './api';
-import { WarningAlert } from './Alert';
 import WelcomeScreen from './WelcomeScreen';
 
 class App extends Component {
