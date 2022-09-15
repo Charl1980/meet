@@ -38,15 +38,17 @@ class App extends Component {
         }
       });
     }
-    //if (!navigator.onLine) {
-    //  this.setState({
-    //    warningText: 'You are offline! The data has been loaded from the cache and may not be up to date.'
-    //  });
-    //} else {
-    //  this.setState({
-    //    warningText: ''
-    //  });
-    //}
+    if (!navigator.onLine) {
+      console.log('offline');
+      //  this.setState({
+      //    warningText: 'You are offline! The data has been loaded from the cache and may not be up to date.'
+      //  });
+    } else {
+      console.log('online');
+      //  this.setState({
+      //    warningText: ''
+      //  });
+    }
   }
 
   componentWillUnmount() {
