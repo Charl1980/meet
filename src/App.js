@@ -65,7 +65,7 @@ class App extends Component {
       const city = location.split(', ').shift();
       return { city, number };
     });
-    //data = data.filter(data => (data.number >= 1));
+    data = data.filter(data => (data.number >= 1));
     return data;
   }
 
