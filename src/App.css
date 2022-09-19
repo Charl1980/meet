@@ -169,7 +169,7 @@ input[type="number"]:focus {
   position: relative;
 }
 
-.data-vis-wrapper {
+/*.data-vis-wrapper {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -182,7 +182,7 @@ input[type="number"]:focus {
 
 .recharts-surface {
   overflow: visible;
-}
+}*/
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
