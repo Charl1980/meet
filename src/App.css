@@ -169,13 +169,13 @@ input[type="number"]:focus {
   position: relative;
 }
 
-/*.data-vis-wrapper {
+.data-vis-wrapper {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.data-vis-wrapper .recharts-responsive-container {
+/*.data-vis-wrapper .recharts-responsive-container {
   min-width: 100%;
   display: flex;
 }
@@ -189,12 +189,12 @@ input[type="number"]:focus {
     flex-direction: row;
   }
 
-  .data-vis-wrapper .recharts-responsive-container {
+  /*.data-vis-wrapper .recharts-responsive-container {
     flex-basis: 50%;
     max-width: 50%;
     min-width: auto;
     margin: 0 auto;
-  }
+  }*/
 }
 
 @media only screen and (max-width: 768px) {
