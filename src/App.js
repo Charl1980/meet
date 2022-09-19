@@ -8,6 +8,13 @@ import { extractLocations, getEvents, checkToken, getAccessToken } from './api';
 import WelcomeScreen from './WelcomeScreen';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
+const data = [
+  { "city": "Dubai", "number": 2 },
+  { "city": "Toronto,", "number": 2 },
+  { "city": "Santiago,", "number": 3 },
+  { "city": "Tokyo,", "number": 2 }
+]
+
 class App extends Component {
   state = {
     events: [],
@@ -58,16 +65,16 @@ class App extends Component {
     this.mounted = false;
   }
 
-  getData = () => {
-    const { locations, events } = this.state;
-    let data = locations.map((location) => {
-      const number = events.filter((event) => event.location === location).length;
-      const city = location.split(', ').shift();
-      return { city, number };
-    });
-    data = data.filter(data => (data.number >= 1));
-    return data;
-  }
+  //getData = () => {
+  //const { locations, events } = this.state;
+  //let data = locations.map((location) => {
+  //const number = events.filter((event) => event.location === location).length;
+  //const city = location.split(', ').shift();
+  //return { city, number };
+  //});
+  //data = data.filter(data => (data.number >= 1));
+  //return data;
+  //}
 
   updateEvents = (location, eventCount) => {
     if (eventCount === undefined) {
@@ -125,7 +132,7 @@ class App extends Component {
               <XAxis type="category" dataKey="city" name="city" />
               <YAxis allowDecimals={false} type="number" dataKey="number" name="number of events" />
               <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-              <Scatter data={this.getData} fill="#8884d8" />
+              <Scatter data={data} fill="#8884d8" />
             </ScatterChart>
           </ResponsiveContainer>
         </div>
