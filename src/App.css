@@ -94,15 +94,15 @@ input[type="number"]:focus {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid darkslategrey;
+  border: 1px solid #304366;
   border-radius: 4px;
   position: relative;
-  background-color: mintcream;
+  background-color: #304366;
 }
 
 .event__Overview,
 .event__Details {
-  color: darkslategrey;
+  color: mintcream;
 }
 
 .details-btn {
@@ -113,9 +113,9 @@ input[type="number"]:focus {
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-  background-color: darkslategrey;
+  background-color: #fd768c;
   border: none;
-  color: white;
+  color: mintcream;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -123,9 +123,9 @@ input[type="number"]:focus {
 }
 
 .details-btn:hover {
-  background-color: mintcream;
-  border: 1px solid darkslategrey;
-  color: darkslategrey;
+  background-color: #fcb9c4;
+  border: 1px solid #fd768c;
+  color: #304366;
 }
 
 .name {
