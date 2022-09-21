@@ -123,9 +123,7 @@ input[type="number"]:focus {
 }
 
 .details-btn:hover {
-  background-color: #fcb9c4;
-  border: 1px solid #fd768c;
-  color: #304366;
+  background-color: #fe9bab;
 }
 
 .name {
