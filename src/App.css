@@ -32,7 +32,7 @@ input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
   outline: none;
-  border: 1px solid #ccc;
+  border: 1px solid #304366;
   font-size: 14px;
   line-height: 20px;
   align-self: center;
@@ -41,7 +41,7 @@ input[type="number"] {
 
 input[type="text"]:focus,
 input[type="number"]:focus {
-  border: 1px solid #bcdcdb;
+  border: 1px solid #fd768c;
 }
 
 .city {
@@ -81,7 +81,7 @@ input[type="number"]:focus {
 }
 
 .suggestions>li:hover {
-  background-color: #bcdcdb;
+  background-color: #fd768c;
 }
 
 .EventList {
